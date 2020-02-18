@@ -96,6 +96,9 @@ public class Job {
     }
 
     public String toString(){
+        if((name == "")&&(employer.getValue() == "")&&(location.getValue() == "")&&(positionType.getValue() == "")&&(coreCompetency.getValue() == "")){
+            return "OOPS! This job does not seem to exist.";
+        }
         if(name == ""){
             name = "Data Not Available";
         }
@@ -111,9 +114,7 @@ public class Job {
         if(coreCompetency.getValue() == ""){
             coreCompetency.setValue("Data Not Available");
         }
-        if((name == "")&&(employer.getValue() == "")&&(location.getValue() == "")&&(positionType.getValue() == "")&&(coreCompetency.getValue() == "")){
-            System.out.println("OOPS! This job does not seem to exist.");
-        }
+
         return "\nID: "+this.getId()+"\nName: "+name+"\nEmployer: "+employer.getValue()+"\nLocation: "+location.getValue()+"\nPosition Type: "+positionType.getValue()+"\nCore Competency: "+coreCompetency.getValue()+"\n";
     }
 }

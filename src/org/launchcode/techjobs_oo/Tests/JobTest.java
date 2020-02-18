@@ -74,9 +74,8 @@ public class JobTest {
     //Testing for toString if Job has id only
     @Test
     public void testJobIdOnly(){
-        if((testEmptyJob.toString()) == ("\nID: 6\nName: Data Not Available\nEmployer: Data Not Available\nLocation: Data Not Available\nPosition Type: Data Not Available\nCore Competency: Data Not Available\n") ){
-            System.out.println("OOPS! This job does not seem to exist.");
-        };
+        assertEquals(testEmptyJob.toString()  ,("OOPS! This job does not seem to exist."));
+
     }
 
 
